@@ -1,0 +1,52 @@
+/* Variables and mixins declared here will be available in all other SCSS files */
+
+@font-face {
+ font-family: 'Raleway';
+ src: url('/fonts/raleway-variable.ttf');
+}
+
+@font-face {
+ font-family: 'Source Code Pro';
+ src: url('/fonts/SourceCodePro-Regular.ttf');
+ font-weight: normal;
+}
+
+@font-face {
+ font-family: 'Source Code Pro';
+ src: url('/fonts/SourceCodePro-Bold.ttf');
+ font-weight: bold;
+}
+
+@font-face {
+ font-family: 'Source Code Pro';
+ src: url('/fonts/SourceCodePro-Light.ttf');
+ font-weight: lighter;
+}
+
+$raleway: 'Raleway', sans-serif;
+$sourcecode: 'Source Code Pro', monospace;
+
+$black: #000;
+$white: #FFF;
+$grey: #7F7F7F;
+
+@-webkit-keyframes animateGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes animateGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-o-keyframes animateGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes animateGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
