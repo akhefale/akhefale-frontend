@@ -28,7 +28,7 @@ export const projectsQuery = operationStore(`
 
 export const articlesQuery = operationStore(`
   query {
-    words {
+    words(sort:"id:desc") {
       id
       title
       content

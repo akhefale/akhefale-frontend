@@ -194,8 +194,39 @@ h1.colourful {
   position: fixed;
   left: 20px;
   top: 20px;
+  cursor: pointer;
   svg {
     fill: $grey;
+  }
+}
+
+.articles-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .article {
+    flex-direction: column;
+    max-width: 600px;
+    text-decoration: none;
+  }
+}
+
+.final-notes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ul {
+    list-style: none;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    li {
+      margin: 10px 0;
+      color: $white;
+    }
   }
 }
 

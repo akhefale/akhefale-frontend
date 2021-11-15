@@ -26,7 +26,7 @@
           <a href="/articles/1" class="button primary">
             Læs manifest
           </a>
-          <a href="#" class="button">
+          <a href="/articles" class="button">
             Flere skrivelser
           </a>
         </div>
