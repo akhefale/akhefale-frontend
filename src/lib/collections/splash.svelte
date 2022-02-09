@@ -7,24 +7,22 @@
   import { sleep, until } from '$lib/utils.js';
 
   let asaPilis = query(asaPiliQuery);
+  let asaPiliImages = [];
 
   async function shuffleSymbols() {
-    let container = document.querySelector('.asaPilis');
 
-    for (let i = container.children.length; i >= 0; i--) {
-      let randChild = container.children[Math.random() * i | 0];
-      if (randChild.matches('.asaPiliContainer')) {
-        container.appendChild(randChild);
-      }
+    while (true) {
+      let e = asaPiliImages[Math.floor(Math.random() * asaPiliImages.length)];
+      e.src = asaPiliImages[Math.floor(Math.random() * asaPiliImages.length)].src;
+      await sleep(10);
     }
 
-    await sleep(100);
-    shuffleSymbols();
-  }
+  };
 
   onMount(async() => {
 
     await until(() => asaPilis.data) // wait until data has been fetched
+    asaPiliImages = document.querySelectorAll('.asaPili img');
     shuffleSymbols();
 
   });
@@ -34,28 +32,26 @@
 <div class="splash">
   <div class="asaPilis">
     {#if $asaPilis.data}
-      <div class="title">
-        <h1 class="colourful">AKHE<br>FALE</h1>
-      </div>
-      {#each $asaPilis.data.asaPilis as asaPili, i}
-        <div class="asaPiliContainer">
-          <span class="asaPili">
-            <img src="{getContext('backendUrl') + asaPili.Symbol.url}" alt="{asaPili.Name}" />
-          </span>
-        </div>
 
-        <div class="asaPiliContainer">
-          <span class="asaPili">
-            <img src="{getContext('backendUrl') + asaPilis.data.asaPilis[Math.random() * asaPilis.data.asaPilis.length | 0].Symbol.url}" alt="{asaPili.Name}" />
-          </span>
-        </div>
-
-        <div class="asaPiliContainer">
-          <span class="asaPili">
-            <img src="{getContext('backendUrl') + asaPilis.data.asaPilis[Math.random() * asaPilis.data.asaPilis.length | 0].Symbol.url}" alt="{asaPili.Name}" />
-          </span>
+      {#each Array(10) as _, i}
+        <div class="asaPiliRow">
+          {#if i == 0}
+          <div class="title">
+            <h1 class="colourful">AKHE<br>FALE</h1>
+          </div>
+          {/if}
+          {#each $asaPilis.data.asaPilis as asaPili, i}
+            {#each Array(1) as _}
+              <div class="asaPiliContainer">
+                <span class="asaPili">
+                  <img src="{getContext('backendUrl') + asaPilis.data.asaPilis[Math.random() * asaPilis.data.asaPilis.length | 0].Symbol.url}" alt="{asaPili.Name}" />
+                </span>
+              </div>
+            {/each}
+          {/each}
         </div>
       {/each}
+
     {/if}
   </div>
 </div>

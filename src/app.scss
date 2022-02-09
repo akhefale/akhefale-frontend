@@ -95,11 +95,20 @@ h1.colourful {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    .asaPiliContainer {
-      .asaPili {
-        img {
-          width: 110px;
-          filter: invert(0.5);
+
+    .asaPiliRow {
+      display: flex;
+      flex-direction: row;
+
+      .asaPiliContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        .asaPili {
+          img {
+            width: 110px;
+            filter: invert(0.5);
+          }
         }
       }
     }
@@ -239,13 +248,13 @@ h1.colourful {
       }
     }
     .splash {
-      .asaPilis {
+      .asaPilis .asaPiliRow {
         &:not(:first-child) {
           margin: 2.5px;
         }
         .asaPiliContainer .asaPili img { width: 80px; }
       }
-      .title {
+      .asaPilis .asaPiliRow .title {
         width: 75px;
         height: 75px;
         margin: 5px;
