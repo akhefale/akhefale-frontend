@@ -3,7 +3,7 @@
   import { initClient } from '@urql/svelte';
   import { setContext } from 'svelte';
 
-  const backendUrl = 'https://akhefale-api.adrianelias.dk'
+  const backendUrl = 'https://akhefale.com'
   setContext('backendUrl', backendUrl);
 
   initClient({
